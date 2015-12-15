@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="yes" name="apple-touch-fullscreen"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>用户登录</title>
+    <link rel="stylesheet" type="text/css" href="less/all.css">
+    <link rel="stylesheet" type="text/css" href="js/lib/login/css/login-min.css">
+</head>
+<body id="J_Login" class="user-login">
+<input type="hidden" id="dispatcher" value="home">
+<section class="container">
+    <div class="login-nav" id="J_LoginNav"><div class="login-nav-title" id="J_NavTitle">导航相关标题</div></div>
+    <div class="login-logo" id="J_LoginLogo"><img src="img/user_logo.png"></div>
+    <div class="login-form" id="J_LoginForm">
+        <ul>
+            <li>
+                <input id="J_TelNumber" type="text" placeholder="手机号码">
+            </li>
+            <li>
+                <input id="J_PwdNumber" type="password" placeholder="密码">
+            </li>
+        </ul>
+    </div>
+    <div class="more-link" id="J_MoreLink"><a href="findPwd">忘记密码</a><a href="register">免费注册</a></div>
+    <div class="login-btn"><input type="submit" id="J_SubmitData" data-url="../mockup/json/login.json" value="登录"></div>
+    <div id="J_ErrorTip" class="error-tip"></div>
+</section>
+<script src="js/lib/zepto/zepto.min.js" type="text/javascript"></script>
+<script src="js/seajs/sea.js?v=1.0.0" data-config="config.js?v=1.0.0" data-main="main.js?v=1.0.0" id="seajsFile"></script>
+</body>
+</html>
