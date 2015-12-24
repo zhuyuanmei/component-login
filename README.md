@@ -1,8 +1,9 @@
 # component_login
 组件名称：用户登录<br>
 组件功能：完成登录页面元素-- 导航条，Logo图标，其他链接模块 的动态配置(隐藏或显示)以及相关事件的绑定和回调<br>
-组件参数：{<br>
-            //获取当前官网主色调(决定nav和btn色系)<br>
+组件参数：
+$.login({
+            //获取当前官网主色调(决定nav和btn色系)
             mainColor: '#00A0E9',
 
             //登录导航条标示符
@@ -44,7 +45,7 @@
             //提交btn对象
             submitBtn: $('#J_SubmitData'),
 
-            //ajax回调函数 (可以自己封装具体方法)
+            //ajax回调函数
             callBackFunc: function(result){
                 if(result.flag){
                     window.location.href = result.url;
@@ -52,5 +53,6 @@
                     errorTip(this.tipObj,result.msg);
                 }
             }
+        });
 
 }
