@@ -148,7 +148,12 @@ define(function(require, exports, module) {
 
                 var $mainKey = _this.settings.mainKeyObj,
                     $errorTip = _this.settings.tipObj;
+
                 $mainKey.on('blur',function(){
+                    if(_this.settings.hasNav){
+                        _this.settings.navObj.css({'position':'fixed','top':0,'left':0});
+                    }
+
                     if(_this.settings.mainKeyFlag === 'phone'){
                         _this.validatePhone($mainKey,$errorTip,'请填写正确的手机号码');
                     }else if(_this.settings.mainKeyFlag === 'userName'){
@@ -157,11 +162,29 @@ define(function(require, exports, module) {
                 });
 
                 var $pwd = _this.settings.pwdObj;
+
                 $pwd.on('blur',function(){
+                    if(_this.settings.hasNav){
+                        _this.settings.navObj.css({'position':'fixed','top':0,'left':0});
+                    }
+
                     _this.validatePwd($pwd,$errorTip,'由字母+数字组合的6至16位密码');
                 });
 
+                //解决ios7 beta3以下版本的position:fixed问题
+                if(_this.settings.hasNav){
+                    $mainKey.on('focus',function(){
+                        _this.settings.navObj.css({'position':'absolute','top':0,'left':0});
+                    });
+
+                    $pwd.on('focus',function(){
+                        _this.settings.navObj.css({'position':'absolute','top':0,'left':0});
+                    });
+                }
+
                 _this.settings.submitBtn.on('click',function(){
+                    _this.settings.navObj.css({'position':'absolute','top':0,'left':0});
+
                     if(!(_this.settings.submitBtn.hasClass('disabled'))){
                         var mainKeyResult = false;
                         if(_this.settings.mainKeyFlag === 'phone'){
