@@ -2,11 +2,13 @@
 组件名称：用户登录<br>
 组件功能：完成登录页面元素-- 导航条，Logo图标，其他链接模块 的动态配置(隐藏或显示)以及相关事件的绑定和回调<br>
 组件参数：
-$.login({ <br>
-            //获取当前官网主色调(决定nav和btn色系)<br>
+
+$.login({
+
+            //获取当前官网主色调[决定导航条(nav color)和提交按钮(btn background-color)]
             mainColor: '#00A0E9',
 
-            //登录导航条标示符
+            //是否存在登录导航条标示符
             hasNav: true,
 
             //登录导航对象
@@ -15,7 +17,7 @@ $.login({ <br>
             //登录导航title对象
             navTitleObj: $('#J_NavTitle'),
 
-            //登录logo图片标示符
+            //是否存在登录logo图片标示符
             hasLogo: true,
 
             //登录logo对象
@@ -36,7 +38,7 @@ $.login({ <br>
             //提示信息载体对象
             tipObj: $('#J_ErrorTip'),
 
-            //'忘记密码','立即注册'等模块标示符
+            //是否存在'忘记密码','立即注册'等模块标示符
             hasMoreLink: true,
 
             //'忘记密码','立即注册'等模块对象
