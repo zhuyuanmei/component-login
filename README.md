@@ -5,7 +5,7 @@
 
 $.login({
 
-            //获取当前官网主色调[决定导航条(nav color)和提交按钮(btn background-color)]
+            //获取当前官网主色调【决定导航条(nav color)和提交按钮(btn background-color)】
             mainColor: '#00A0E9',
 
             //是否存在登录导航条标示符
