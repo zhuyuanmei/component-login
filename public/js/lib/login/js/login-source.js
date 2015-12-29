@@ -25,6 +25,8 @@ define(function(require, exports, module) {
             create : function() {
                 var _this = this;
 
+                var $errorTip = _this.settings.tipObj;
+
                 if(_this.settings.hasNav){
                     //有导航条
                     _this.settings.navTitleObj.css('color',_this.settings.mainColor);
@@ -35,11 +37,15 @@ define(function(require, exports, module) {
                         _this.settings.loginForm.css('margin-top',0);
                         _this.settings.logoObj.css('margin-top',50);
                         _this.settings.logoObj.show();
+
+                        $errorTip.css('top','55%');
                     }else{
                         //无logo图片
                         _this.settings.loginForm.css('margin-top',80);
                         _this.settings.logoObj.css('margin-top',50);
                         _this.settings.logoObj.hide();
+
+                        $errorTip.css('top','30%');
                     }
                 }else{
                     //无导航条
@@ -50,11 +56,15 @@ define(function(require, exports, module) {
                         _this.settings.loginForm.css('margin-top',0);
                         _this.settings.logoObj.css('margin-top',0);
                         _this.settings.logoObj.show();
+
+                        $errorTip.css('top','45%');
                     }else{
                         //无logo图片
                         _this.settings.loginForm.css('margin-top',40);
                         _this.settings.logoObj.css('margin-top',0);
                         _this.settings.logoObj.hide();
+
+                        $errorTip.css('top','20%');
                     }
                 }
 
@@ -230,7 +240,7 @@ define(function(require, exports, module) {
                                     _this.settings.callBackFunc(res);
                                 },
                                 error: function(xhr, type){
-                                    _this.errorTip(_this.settings.tipObj,'请求服务器异常,稍后再试');
+                                    _this.errorTip($errorTip,'请求服务器异常,稍后再试');
                                 }
                             });
                         }
